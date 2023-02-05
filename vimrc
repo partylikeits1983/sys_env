@@ -30,8 +30,3 @@ Plugin 'TovarishFin/vim-solidity'
 
 call vundle#end()
 filetype plugin indent on
-
-
-
-
-
