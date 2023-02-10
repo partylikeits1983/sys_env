@@ -5,6 +5,8 @@
 syntax enable
 " set lines
 set number
+" set paste
+set paste
 " delete line
 set backspace=indent,eol,start
 " set bs=eol
@@ -27,6 +29,13 @@ Plugin 'VundleVim/Vundle.vim'
 
 " " Add plugins here
 Plugin 'TovarishFin/vim-solidity'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
+
+" relative line numbers
+:set number relativenumber
+:set nu rnu
+
+
