@@ -1,42 +1,52 @@
-" vim --version | grep 'clipboard'
-" if -clipboard => sudo apt-get install vim-gtk3 -y
-
 " enable syntax
 syntax enable
-" set lines
-set number
+
 " set paste
 set paste
-" delete line
-set backspace=indent,eol,start
-" set bs=eol
-" tab = 4 spaces
-set tabstop=4
-set shiftwidth=4
+
+" relative line numbers
+set number relativenumber
+set nu rnu
+
+" auto brackets
+inoremap ( ()<Left>
+
+" show tabs and empty lines
+set list listchars=tab:»-,trail:·,extends:»,precedes:«
+
+" use spaces instead of tab SUPER IMPORTANT FOR STYLE!
+set tabstop=4 shiftwidth=4 expandtab
+
 " mouse
 set mouse=a
+
 " yank to clipboard
 set clipboard=unnamedplus
 map <C-y> :w !xclip -sel c <CR><CR>
 
-set paste
+" remove trailing space
+nnoremap <F8> :let _s=@/<Bar>:%s/;\s\+$/;/e<Bar>:let @/=_s<Bar><CR>
 
+
+
+" ################## 
+"required for solidity .sol syntax 
 set nocompatible
 filetype off
+
+" Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" " Add plugins here
+" Add plugins here
 Plugin 'TovarishFin/vim-solidity'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
-filetype plugin indent on
-" relative line numbers
-:set number relativenumber
-:set nu rnu
 
-" auto brackets
-inoremap ( ()<Left>
+" required for .sol syntax
+filetype plugin indent on
+
+
 
