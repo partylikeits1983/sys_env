@@ -33,9 +33,10 @@ Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
-
 " relative line numbers
 :set number relativenumber
 :set nu rnu
 
+" auto brackets
+inoremap ( ()<Left>
 
